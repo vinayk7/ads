@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <link rel="preconnect" href="https://tpc.googlesyndication.com">
+    <link rel="preconnect" href="https://www.googletagservices.com">
+     <script>
+            var timerStart = Date.now();
+            console.log("initialised @: %c"+ (Date.now()-timerStart) + ' ms', 'color:blue;');///DEBUG 
+
+            window.addEventListener('load', function(){
+                console.log("Page load complete@: %c "+ (Date.now()-timerStart) + ' ms ', 'color:white;background-color:darkviolet'); 
+                //alert('Page loading took: ' +  ((Date.now()-timerStart)/1000).toFixed(2) + ' seconds' )
+            });
+    </script>
+<head>
+    <title>Indus News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <style type="text/css" media="handheld">
+    /* rules for mobile devices that don't support media queries */
+    body {
+        font-size: 80%;
+    }
+    </style>
+
+
+    <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async="async"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-47795566-10" async="async"></script>
+    
+    <script>
+    var gptadslots = [];
+    var googletag = googletag || {cmd:[]};
+
+    googletag.cmd.push(function() {
+        
+        googletag.pubads().enableSingleRequest(); //SRA
+        googletag.pubads().collapseEmptyDivs();
+ 
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+            switch(event.slot.getAdUnitPath()){
+                case '/42115163/IP_start.indusos.com_320X100_Mobile':
+                        console.log('Ad 1 HTML loaded@ '+  (Date.now()-timerStart) + ' ms ');
+                        document.querySelector('#div-gpt-ad-1551357349271-9 div iframe').onload = function(){ 
+                            console.log('Ad 1 Content loaded@ '+  (Date.now()-timerStart) + ' ms ');
+                        }
+                        break;
+                case '/42115163/IP_start.indusos.com_300X250_Mobile':
+                        console.log('Ad 2 HTML loaded@ '+  (Date.now()-timerStart) + ' ms ');
+                        document.querySelector('#div-gpt-ad-1565767605361-0 div iframe').onload = function(){
+                            console.log('Ad 2 Content loaded@ '+  (Date.now()-timerStart) + ' ms ');
+                        }
+                        break;
+            }
+        });
+
+        adSlot1 = googletag.defineSlot('/42115163/IP_start.indusos.com_320X100_Mobile', [[300, 100], [768,100], [144, 100], [320, 100], [375, 100], [1024, 100]], "div-gpt-ad-1551357349271-9")
+        .addService(googletag.pubads());
+        adSlot2 = googletag.defineSlot('/42115163/IP_start.indusos.com_300X250_Mobile', [[300, 250], [768,100], [144, 100], [320, 100], [375, 100], [1024, 100]],'div-gpt-ad-1565767605361-0')
+        .addService(googletag.pubads());
+        googletag.NamedSize = 'fluid';
+        googletag.enableServices();
+        
+        console.log('Reqesting Ad 1 @ '+  (Date.now()-timerStart) + ' ms ');
+        googletag.display('div-gpt-ad-1551357349271-9');
+        console.log('Reqesting Ad 2 @ '+  (Date.now()-timerStart) + ' ms ');
+        googletag.display('div-gpt-ad-1565767605361-0');
+    });
+    </script>
+</head>
+
+<body>
+    <!-- google optimisation suggestions -->
+    
+    <div id="div-gpt-ad-1551357349271-9"></div>
+    <div id="div-gpt-ad-1565767605361-0"></div>
+ 
+</body>
+</html>
