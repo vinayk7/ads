@@ -66,14 +66,55 @@
         console.log('Reqesting Ad 2 @ '+  (Date.now()-timerStart) + ' ms ');
         googletag.display('div-gpt-ad-1565767605361-0');
     });
+        
+    window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+            fetchNews();
+            //CSS CLASSES SETUP: based on device
+            var mql = window.matchMedia('(max-width: 699px)');
+            if (mql.matches) {
+                document.querySelector('#indus_cont').classList.remove("indus_middle");;
+            }
+            mql = window.matchMedia('(max-width:339px)');
+            if (mql.matches) {
+                document.querySelector('#indus_cont_five').classList.add("indus_middle_five");;
+            }
+            mql = window.matchMedia('(max-width: 399px)');
+            if (mql.matches) {
+                var sel = '#all_news';
+                var coll = document.querySelector(sel).classList.add('lessthan400');
+
+            } else {
+                var sel = '#all_news';
+                var coll = document.querySelector(sel).classList.add('morethan400');
+            }
+        });
     </script>
+    <style>
+        ul {padding: 0;list-style-type: none;}
+        li {list-style-type: none;/* border-bottom: 1px solid #ccc; */}
+        li#top_news_ads1{padding:0px;margin:0px 0 9px 0;}
+        li#top_news_ads2{margin:52px 0 9px;}
+        #div-gpt-ad-1565767605361-0 {height:100%;width:100%;text-align: center;font: 0/0;}
+        #div-gpt-ad-1551357349271-9 {height:100%;width:100%;text-align: center;font: 0/0;}
+        .indus_sections {padding-top: 34px;}
+        .flex-container {   display: flex;  flex-wrap: wrap; flex-direction: column;}
+        .indus_full{display:inline-block; width:100%;}
+        ul { margin-top: 0; margin-bottom: 10px }
+    </style>
 </head>
 
 <body>
-    <!-- google optimisation suggestions -->
-    
-    <div id="div-gpt-ad-1551357349271-9"></div>
-    <div id="div-gpt-ad-1565767605361-0"></div>
+    <section class="indus_sections">
+        <div class="flex-container">
+            <div class="indus_full" id="indus_full">
+                <ul>
+                    <li id="top_news_ads1"><div id="div-gpt-ad-1551357349271-9"></div></li>
+                    <li id="top_news_ads2"><div id="div-gpt-ad-1565767605361-0"></div></li>
+                </ul>
+            </div>
+        </div>
+    </section>
  
 </body>
 </html>
